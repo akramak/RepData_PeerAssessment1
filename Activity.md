@@ -23,7 +23,7 @@ names(Act_sum)[2]<-"Total_Steps"
 ```echo=TRUE
 plot1 <- hist(Act_sum$Total_Steps, col="red",main="Total Number of Steps by Day",xlab="# of Steps",ylab="Freq",breaks=10)
 ```
-
+![plot of chunk unnamed-chunk-1](plot1.png) 
 # Calculate mean and median
 ```echo=TRUE
 avg <- mean(Act_sum$Total_Steps)
@@ -37,7 +37,7 @@ avg_int <- aggregate(steps ~ interval, Act_data1,mean)
 
 plot2 <- plot( x= avg_int$interval,y= avg_int$steps, type ="o")
 ```
-
+![plot of chunk unnamed-chunk-1](plot2.png) 
 # calculate max
 ```echo=TRUE
 mx <- avg_int[avg_int$steps == max(avg_int$steps),]
@@ -66,7 +66,7 @@ Edit_sum <- aggregate(steps.x ~ date, Edit_data1, sum)
 ```echo=TRUE
 plot3 <- hist(Edit_sum$steps.x, col="red",main="Total Number of Steps by Day",xlab="# of Steps",ylab="Freq",breaks=10)
 ```
-
+![plot of chunk unnamed-chunk-1](plot3.png) 
 # Calculate avg and median steps with replaced NAs
 ```echo=TRUE
 edit_avg <- mean(Edit_sum$steps.x)
@@ -85,7 +85,7 @@ Avg_int2 <-aggregate(steps.x~interval+Day_Type,Edit_data1,mean)
 GP<-ggplot(Avg_int2, aes(x=interval,y=steps.x,color=Day_Type))
 GP+geom_line()+facet_wrap(~Day_Type,ncol=1,nrow=2)
 ```
-
+![plot of chunk unnamed-chunk-1](plot4.png) 
 
 
 
